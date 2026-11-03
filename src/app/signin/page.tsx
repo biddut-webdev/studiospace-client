@@ -67,7 +67,7 @@ const SignIn = () => {
 
       await authClient.signIn.social({
         provider: "google",
-        callbackURL: "http://localhost:3000/",
+        callbackURL: "/",
       });
     } catch (error) {
       console.error("Google Login Error:", error);
@@ -75,7 +75,6 @@ const SignIn = () => {
       setGoogleLoading(false);
     }
   };
-
   return (
     <main className="flex min-h-screen items-center justify-center bg-[#f8f7f3] px-4 py-10 transition-colors duration-300 dark:bg-gray-950">
       <div className="w-full max-w-md rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition-colors duration-300 dark:border-gray-700 dark:bg-gray-900">
