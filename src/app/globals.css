@@ -1,26 +1,35 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Hero Slider Pagination */
+.hero-swiper .swiper-pagination {
+  bottom: 24px !important;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.hero-swiper .swiper-pagination-bullet {
+  background: white;
+  opacity: 0.6;
+  width: 10px;
+  height: 10px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.hero-swiper .swiper-pagination-bullet-active {
+  background: #a3e635;
+  opacity: 1;
+  width: 28px;
+  border-radius: 10px;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Global card border visibility */
+.card,
+.studio-card,
+.booking-card {
+  border: 1px solid #9ca3af;
+}
+
+.dark .card,
+.dark .studio-card,
+.dark .booking-card {
+  border-color: #9ca3af;
 }
