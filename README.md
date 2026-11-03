@@ -1,36 +1,101 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# StudioSpace
 
-## Getting Started
+StudioSpace is a studio rental and booking platform where users can explore studios, book spaces, and manage their own studio listings.
 
-First, run the development server:
+## Live Website
+
+**Live URL:** `ADD_YOUR_DEPLOYED_CLIENT_URL`
+
+## Key Features
+
+- Browse and explore available studios.
+- Search and discover studios by category.
+- View detailed studio information, pricing, amenities, and availability.
+- User authentication with email/password and Google.
+- Add, edit, and delete studio listings.
+- Book studios and manage booking requests.
+- Hosts can confirm, complete, or manage bookings.
+- Prevent overlapping confirmed bookings.
+- Save favorite studios to a personal wishlist.
+- Download PDF invoices for confirmed bookings.
+- Responsive design for mobile, tablet, and desktop.
+- Light and dark theme support.
+- Toast notifications and custom confirmation dialogs.
+
+## Technology Stack
+
+### Frontend
+- Next.js (App Router)
+- React
+- TypeScript
+- Tailwind CSS
+- Better Auth
+- Sonner
+- Lucide React
+- jsPDF
+- next-themes
+
+### Backend
+- Node.js
+- Express.js
+- MongoDB
+- Better Auth
+- JSON Web Token (JWT)
+- Cookie Parser
+- Multer
+- ImgBB API
+
+## Run Locally
+
+### Prerequisites
+- Node.js
+- npm
+- MongoDB database
+- ImgBB API key
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/biddut-webdev/studiospace-client.git
+cd studiospace-client
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Configure environment variables
+
+Create a `.env.local` file in the client root directory:
+
+```env
+NEXT_PUBLIC_SERVER_URL=http://localhost:5000
+```
+
+### 4. Start the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Backend Setup
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The backend source code is available here:
 
-## Learn More
+[StudioSpace Server Repository](https://github.com/biddut-webdev/studiospace-server)
 
-To learn more about Next.js, take a look at the following resources:
+Follow the server repository README to configure and run the backend.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Examiner Test Credentials
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Email:** `ADD_EXAMINER_EMAIL`
 
-## Deploy on Vercel
+**Password:** `ADD_EXAMINER_PASSWORD`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Author
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+StudioSpace — Developed as a Programming Hero Batch 14 Assignment Project.
