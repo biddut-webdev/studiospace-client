@@ -18,6 +18,7 @@ const SignIn = () => {
   const [loading, setLoading] = useState(false);
   const [googleLoading, setGoogleLoading] = useState(false);
 
+
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
@@ -34,7 +35,7 @@ const SignIn = () => {
       }
 
       // Create JWT HTTPOnly cookie after successful login
-      const jwtResponse = await fetch(`${SERVER_URL}/auth/jwt`, {
+      const jwtResponse = await fetch("/auth/jwt", {
         method: "POST",
         credentials: "include",
       });
@@ -49,7 +50,7 @@ const SignIn = () => {
       toast.success("Login successful!");
 
       // Redirect to Home page
-      window.location.href = "/";
+      router.replace("/");
 
     } catch (error) {
       console.error("Login Error:", error);
@@ -58,6 +59,7 @@ const SignIn = () => {
       setLoading(false);
     }
   };
+
 
   const handleGoogleLogin = async () => {
     try {
