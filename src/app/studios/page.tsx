@@ -36,7 +36,9 @@ const StudiosPage = async ({ searchParams }: Props) => {
 
   const result = await res.json();
 
-  const studios: TStudio[] = result.data || [];
+  const studios: TStudio[] = Array.isArray(result.data)
+    ? result.data
+    : [];
 
   const filteredStudios =
     category && category !== "All Studios"
