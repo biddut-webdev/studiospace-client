@@ -68,7 +68,7 @@ const MyBookingsPage = () => {
         }
 
         if (isActive) {
-          setBookings(result.data || []);
+          setBookings(Array.isArray(result.data) ? result.data : []);
         }
       } catch (error) {
         console.error("Fetch Bookings Error:", error);
