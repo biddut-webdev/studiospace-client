@@ -48,11 +48,10 @@ const SignIn = () => {
 
       toast.success("Login successful!");
 
-      const callbackURL =
-        new URLSearchParams(window.location.search).get("callbackURL") || "/";
-
-      router.push(callbackURL);
+      // Redirect to Home page
+      router.replace("/");
       router.refresh();
+
     } catch (error) {
       console.error("Login Error:", error);
       toast.error("Something went wrong. Please try again.");
@@ -67,14 +66,16 @@ const SignIn = () => {
 
       await authClient.signIn.social({
         provider: "google",
-        callbackURL: "/",
+        callbackURL: process.env.NEXT_PUBLIC_APP_URL || "/",
       });
+
     } catch (error) {
       console.error("Google Login Error:", error);
       toast.error("Google login failed. Please try again.");
       setGoogleLoading(false);
     }
   };
+
   return (
     <main className="flex min-h-screen items-center justify-center bg-[#f8f7f3] px-4 py-10 transition-colors duration-300 dark:bg-gray-950">
       <div className="w-full max-w-md rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition-colors duration-300 dark:border-gray-700 dark:bg-gray-900">

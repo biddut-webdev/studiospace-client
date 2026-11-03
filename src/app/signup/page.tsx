@@ -66,8 +66,9 @@ const SignUp = () => {
 
       await authClient.signIn.social({
         provider: "google",
-        callbackURL: "/",
+        callbackURL: process.env.NEXT_PUBLIC_APP_URL || "/",
       });
+
     } catch (error) {
       console.error("Google Signup Error:", error);
       toast.error("Google signup failed. Please try again.");
