@@ -11,7 +11,9 @@ const FeaturedStudios = async () => {
   );
 
   const result = await res.json();
-  const studios: TStudio[] = result.data.slice(0, 6);
+  const studios: TStudio[] = Array.isArray(result.data)
+    ? result.data.slice(0, 6)
+    : [];
 
   return (
     <section className="bg-white px-4 py-20 transition-colors duration-300 dark:bg-gray-800 sm:px-6 lg:px-10">
