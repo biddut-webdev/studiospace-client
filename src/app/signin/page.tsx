@@ -49,8 +49,7 @@ const SignIn = () => {
       toast.success("Login successful!");
 
       // Redirect to Home page
-      router.replace("/");
-      router.refresh();
+      window.location.href = "/";
 
     } catch (error) {
       console.error("Login Error:", error);
