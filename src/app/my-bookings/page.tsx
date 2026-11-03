@@ -416,6 +416,7 @@ const MyBookingsPage = () => {
                       src={booking.studioImage}
                       alt={booking.studioTitle}
                       fill
+                      sizes="(max-width: 768px) 100vw, 260px"
                       className="object-cover"
                     />
                   </div>
