@@ -92,6 +92,7 @@ const StudioDetailsPage = async ({ params }: Props) => {
                 alt={`${studio.title} - Image ${index + 1}`}
                 fill
                 priority={index === 0}
+                sizes="(max-width: 640px) 85vw, (max-width: 1024px) 70vw, 60vw"
                 className="object-cover transition duration-500 hover:scale-105"
               />
             </div>
