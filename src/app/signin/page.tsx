@@ -34,11 +34,14 @@ const SignIn = () => {
         return;
       }
 
-      // Create JWT HTTPOnly cookie after successful login
-      const jwtResponse = await fetch("/auth/jwt", {
-        method: "POST",
-        credentials: "include",
-      });
+      // Create JWT cookie from backend
+      const jwtResponse = await fetch(
+        `${process.env.NEXT_PUBLIC_SERVER_URL}/auth/jwt`,
+        {
+          method: "POST",
+          credentials: "include",
+        }
+      );
 
       const jwtResult = await jwtResponse.json();
 
@@ -48,9 +51,8 @@ const SignIn = () => {
       }
 
       toast.success("Login successful!");
-
-      // Redirect to Home page
       router.replace("/");
+      router.refresh();
 
     } catch (error) {
       console.error("Login Error:", error);
